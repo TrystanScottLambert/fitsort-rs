@@ -55,8 +55,8 @@ jobs:
         shell: bash
         run: |
           mkdir dist
-          cp target/${{ matrix.target }}/release/dog dist/dog-${{ matrix.target }}
-          strip dist/dog-${{ matrix.target }} || true
+          cp target/${{ matrix.target }}/release/fitsort dist/fitsort-${{ matrix.target }}
+          strip dist/fitsort-${{ matrix.target }} || true
 
       - name: Checksums
         run: |

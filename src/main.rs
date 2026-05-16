@@ -200,6 +200,7 @@ fn compute_layout(records: &[FileRecord], keywords: &[Keyword]) -> Layout {
     }
 }
 
+/// Write the table to `out`.
 fn write_table<W: Write>(
     out: &mut W,
     records: &[FileRecord],

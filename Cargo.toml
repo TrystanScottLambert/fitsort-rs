@@ -2,6 +2,11 @@
 name = "fitsort-rs"
 version = "0.1.0"
 edition = "2024"
+readme = "README.md"
+description = "A rust rewrite of fitsort, used to read dfits output"
+authors = ["Trystan Lambert <trystan.lambert@uwa.edu.au>"]
+license = "MIT"
+repository = "https://github.com/TrystanScottLambert/fitsort-rs"
 
 [dependencies]
 clap = { version = "4.6.1", features = ["derive"] }

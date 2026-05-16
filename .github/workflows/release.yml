@@ -1,0 +1,69 @@
+name: Build and Release dog
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build ${{ matrix.target }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # macOS (Apple Silicon runner builds both)
+          - os: macos-14
+            target: aarch64-apple-darwin
+
+          - os: macos-14
+            target: x86_64-apple-darwin
+
+          # Linux
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # -----------------------------
+      # Rust
+      # -----------------------------
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      # -----------------------------
+      # Build
+      # -----------------------------
+      - name: Build release
+        env:
+          MACOSX_DEPLOYMENT_TARGET: "11.0"
+        run: cargo build --release --target ${{ matrix.target }}
+
+      # -----------------------------
+      # Package
+      # -----------------------------
+      - name: Package binary
+        shell: bash
+        run: |
+          mkdir dist
+          cp target/${{ matrix.target }}/release/dog dist/dog-${{ matrix.target }}
+          strip dist/dog-${{ matrix.target }} || true
+
+      - name: Checksums
+        run: |
+          cd dist
+          shasum -a 256 * > SHA256SUMS
+
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*

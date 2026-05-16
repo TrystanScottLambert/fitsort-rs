@@ -66,7 +66,7 @@ cargo build --release
 ```
 Move the binary into /usr/local/bin
 ```
-sudo mv targets/release/fitsort /usr/local/bin/
+sudo mv target/release/fitsort /usr/local/bin/
 ```
 ## Cargo
 If you are already comfortable with rust then you can just install `fitsort` using cargo.

@@ -1,6 +1,9 @@
 # fitsort-rs
 A rust rewrite of fitsort
 
+
+![Demo](.github/fitsort.gif)
+
 # Motivation
 `fitsort` (and it's sister program `dfits`) are amazingly useful pieces of software for batch processing the headers of many fits files. These were originally built in C by Nicolas Devillard (The original eclipse packages can be found on hit [github page](https://github.com/ndevilla/eclipse)).
 However, the main webpage for these tools is beginning to go [stale](https://www.eso.org/sci/software/eclipse/eug/eug/node8.html) with some links no longer working. The fear of loosing these tools is too great. Therefore some effort has gone in to preserve them in some way. Noteably [storing the raw c files](https://github.com/granttremblay/eso_fits_tools) and a [python rewrite](https://github.com/Romain-Thomas-Shef/dfitspy).

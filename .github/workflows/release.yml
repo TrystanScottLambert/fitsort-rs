@@ -1,4 +1,4 @@
-name: Build and Release dog
+name: Build and Release fitsort
 
 on:
   push:

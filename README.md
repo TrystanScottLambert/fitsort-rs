@@ -38,20 +38,20 @@ We provide several easy options for installing `fitsort`.
 ### Macos
 For newer macs (m-series) the following commands should work.
 ```
-curl -L -o fitsort https://github.com/trystanscottlambert/fitsort-rs/releases/download/v0.1.0/fitsort-aarch64-apple-darwin
+curl -L fitsort https://github.com/trystanscottlambert/fitsort-rs/releases/download/v0.1.0/fitsort-aarch64-apple-darwin
 chmod +x fitsort-aarch64-apple-darwin
 sudo mv fitsort-aarch64-apple-darwin /usr/local/bin/fitsort
 ```
 Alternatively for older macs
 ```
-curl -L -o fitsort https://github.com/trystanscottlambert/fitsort-rs/releases/download/v0.1.0/fitsort-x86_64-apple-darwin
+curl -L fitsort https://github.com/trystanscottlambert/fitsort-rs/releases/download/v0.1.0/fitsort-x86_64-apple-darwin
 chmod +x fitsort-x86_64-apple-darwin
 sudo mv fitsort-x86_64-apple-darwin /usr/local/bin/fitsort
 ```
 ### Linux
 For Ubuntu/Debian
 ```
-curl -L -o fitsort https://github.com/trystanscottlambert/fitsort-rs/releases/download/v0.1.0/fitsort-x86_64-unknown-linux-gnu
+curl -L fitsort https://github.com/trystanscottlambert/fitsort-rs/releases/download/v0.1.0/fitsort-x86_64-unknown-linux-gnu
 chmod +x fitsort-x86_64-unknown-linux-gnu
 sudo mv fitsort-x86_64-unknown-linux-gnu /usr/local/bin/fitsort
 ```
